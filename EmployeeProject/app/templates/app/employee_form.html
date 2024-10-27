@@ -1,0 +1,54 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+<!-- app/templates/app/employee_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Employee</title>
+    <!-- Bootstrap CSS from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Create Employee</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="id_start_salary">Start Salary:</label>
+                {{ form.start_salary }}
+            </div>
+            <div class="form-group">
+                <label for="id_current_salary">Current Salary:</label>
+                {{ form.current_salary }}
+            </div>
+            <div class="form-group">
+                <label for="id_years_of_experience">Years of Experience:</label>
+                {{ form.years_of_experience }}
+            </div>
+            <div class="form-group">
+                <label for="id_date_of_joining">Date of Joining:</label>
+                {{ form.date_of_joining }}
+            </div>
+            <button type="submit" class="btn btn-success">Create Employee</button>
+        </form>
+    </div>
+
+    <!-- Optional: Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+{% endblock %}
