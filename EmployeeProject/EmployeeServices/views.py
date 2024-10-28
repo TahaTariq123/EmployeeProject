@@ -12,7 +12,12 @@ class EmployeeCreateView(CreateView):
     model = Employee
     form_class = EmployeeForm
     template_name = 'app/employee_form.html'
-    success_url = reverse_lazy('employee-create-success')  # Redirect after successful creation
+    success_url = reverse_lazy('employee-create-success')  
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Task'] = "Create"
+        return context
 
 def employee_create_success_view(request):
     """Render the employee creation success page."""
@@ -23,13 +28,18 @@ class EmployeeUpdateView(UpdateView):
     model = Employee
     form_class = EmployeeForm
     template_name = 'app/employee_form.html'
-    success_url = reverse_lazy('employee-update-success')  # Redirect after successful update
+    success_url = reverse_lazy('employee-update-success') 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Task'] = "Update"
+        return context
 
 class EmployeeDeleteView(DeleteView):
     """View for deleting an existing employee."""
     model = Employee
     template_name = 'app/employee_confirm_delete.html'
-    success_url = reverse_lazy('home')  # Redirect after successful deletion
+    success_url = reverse_lazy('home') 
 
 def employee_update_success_view(request):
     """Render the employee update success page."""

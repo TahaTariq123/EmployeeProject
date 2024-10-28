@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="app\templates\app\employee_confirm_delete.html" />
     <Content Include="app\templates\app\employee_form.html" />
+    <Content Include="app\templates\app\index.css" />
     <Content Include="app\templates\app\success.html" />
     <Content Include="EmployeeServices\templates\EmployeeServices\index.html" />
     <Content Include="requirements.txt" />
